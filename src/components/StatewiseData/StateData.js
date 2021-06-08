@@ -1,4 +1,5 @@
 import React from "react";
+import { NativeSelect, FormControl } from '@material-ui/core'
 import './StateData.css'
 
 export default class StateData extends React.Component {
@@ -10,12 +11,24 @@ export default class StateData extends React.Component {
     const res = await fetch('https://api.covid19india.org/data.json')
     const datas = await res.json()
     this.setState({datas: datas.statewise})
+  }
 
+  handleStateChange = (e) => {
+    e.preventDefault()
+    this.setState({
+      [e.target.name]  : e.target.value
+    })
   }
 
   render() {
     return (
       <>
+   <FormControl className="formControl">
+      <NativeSelect defaultValue="" onChange={this.handleStateChange}>
+        <option value="">India</option>
+        {this.state.datas.map((data, i) => <option key={i} name ="data" value={data}>{data.state}</option>)}
+      </NativeSelect>
+    </FormControl>
    
       <div className="container-fluid mt-5">
         <div className="main-heading">
@@ -27,7 +40,7 @@ export default class StateData extends React.Component {
         <thead className="thead-dark">
         <tr>
             <th>State</th>
-            <th>Confimed</th>
+            <th>Confirmed</th>
             <th>Recovered</th>
             <th>Deaths</th>
             <th>Active</th>

@@ -1,15 +1,14 @@
 import React from "react";
-import { BrowserRouter, Route, Link } from "react-router-dom";
-import StateData from "./components/StatewiseData/StateData";
-import StateGraph from "./components/StatewiseData/StateGraph";
+import {StateData, Cards, StateGraph} from "./components"
+import "./App.css"
 
 function App() {
   return (
-    <BrowserRouter>
-      <div>  
+      <div className="container">  
+       <Cards/>
        <StateData/>
+       {/* <StateGraph/> */}
       </div>
-    </BrowserRouter>
   );
 }
 
