@@ -48,6 +48,7 @@ export default class StateData extends React.Component {
           </tr>
      </thead>
      <tbody>
+     
      {this.state.datas.map((data,index) => {
             return (
               <tr key={index}>

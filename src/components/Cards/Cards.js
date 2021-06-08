@@ -23,7 +23,7 @@ export default class Charts extends React.Component {
                 <Grid container spacing = {3} justify="center">
                         <Grid item component={Card} xs={12} md={3} className={cn(styles.card, styles.infected)}>
                         <CardContent>
-                       <Typography color="textSecondary" gutterbottom>
+                       <Typography color="textSecondary">
                            Infected</Typography>
                        <Typography variant="h5">{this.state.datas.confirmed}
                           </Typography>
@@ -33,7 +33,7 @@ export default class Charts extends React.Component {
              </Grid>
              <Grid item component={Card} xs={12} md={3} className={cn(styles.card, styles.recovered)}>
                         <CardContent>
-                       <Typography color="textSecondary" gutterbottom>Recovered</Typography>
+                       <Typography color="textSecondary" >Recovered</Typography>
                        <Typography variant="h5">{this.state.datas.recovered}</Typography>
                        <Typography color="textSecondary">{this.state.datas.lastupdatedtime}</Typography>
                        <Typography variant="body2">Number of recoveries cases in India</Typography>
@@ -41,7 +41,7 @@ export default class Charts extends React.Component {
              </Grid>
              <Grid item component={Card} xs={12} md={3} className={cn(styles.card, styles.deaths)}>
                         <CardContent>
-                       <Typography color="textSecondary" gutterbottom>Deaths</Typography>
+                       <Typography color="textSecondary" >Deaths</Typography>
                        <Typography variant="h5">{this.state.datas.deaths}</Typography>
                        <Typography color="textSecondary">{this.state.datas.lastupdatedtime}</Typography>
                        <Typography variant="body2">Number of Deaths cases in India Covid-19 </Typography>
